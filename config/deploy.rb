@@ -1,22 +1,25 @@
-
-
 set :application, "thomaswebsite"
 set :repository,  "git@bitbucket.org:tommyvyo/thomasvendetta.com.git"
-
+set :branch, :master
+set :deploy_to, '/var/www/rails/thomaswebsite'
+set :deploy_via, :remote_cache
 set :scm, :git
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+set :user, "app"
+
+set :rails_env, :production
+set :unicorn_binary, "/home/app/.rbenv/shims/unicorn"
+set :unicorn_config, "#{current_path}/config/unicorn.rb"
+set :unicorn_pid, "#{current_path}/tmp/pids/unicorn.pid"
+
+ssh_options[:forward_agent] = true
+default_run_options[:pty] = true 
+
+
 
 role :web, "thomasvendetta.com"                          # Your HTTP server, Apache/etc
 role :app, "thomasvendetta.com"                          # This may be the same as your `Web` server
 role :db,  "thomasvendetta.com", :primary => true # This is where Rails migrations will run
 
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
+set :use_sudo, false
 
-# If you are using Passenger mod_rails uncomment this:
-# namespace :deploy do #   task :start do ; end
-#   task :stop do ; end
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
+
