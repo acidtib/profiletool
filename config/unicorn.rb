@@ -1,7 +1,7 @@
 worker_processes 2
 working_directory "/var/www/rails/thomaswebsite/current"
 
-listen "/var/www/rails/thomaswebsite/current/tmp/unicorn.sock"
+listen "/tmp/unicorn.sock"
 preload_app true
 timeout 30
 
