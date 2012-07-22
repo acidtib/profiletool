@@ -1,5 +1,5 @@
 worker_processes 2
-working_directory "/var/www/rails/thomaswebsite/"
+working_directory "/var/www/rails/thomaswebsite/current"
 
 preload_app true
 timeout 30
