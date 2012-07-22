@@ -24,6 +24,9 @@ role :db,  "thomasvendetta.com", :primary => true # This is where Rails migratio
 
 set :use_sudo, false
 
+after 'deploy:update_code' do
+  run "cd #{release_path}; RAILS_ENV=production rake assets:precompile"
+end
 
 namespace :deploy do
   task :start, :roles => :app, :except => { :no_release => true } do 
