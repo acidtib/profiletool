@@ -57,8 +57,15 @@ ul.inline {
 div.logo-holder {
   padding:.5em;
 }
+h1, h2, h3, h4 {
+
+    font-family: 'Oxygen', cursive;
+}
+
+h2 {
+  color: #444;
+}
 #logo {
-  font-family: 'Oxygen', cursive;
   font-weight:lighter;
   color: #fff;
   margin-top:.5em;
