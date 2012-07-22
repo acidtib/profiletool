@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Thomasite</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+<title>Thomasite</title>
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
 </head>
 <body>
+
+<div id="topbar">
+  <div class="row"> 
+    <div class="six columns logo-holder">
+      <h1 id="logo" style="display:inline;">thomas<strong>vendetta</strong></h1>
+    </div>
+    <div class="six columns">
+      <ul class="inline nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Status</a></li>
+        <li><a href="#">Pictures</a></li>
+        <li><a href="#">Work</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <%= yield %>
 

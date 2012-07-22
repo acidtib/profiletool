@@ -13,3 +13,60 @@
  */
 
 @import "foundation";
+
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+
+$aqua: #105b63;
+
+$green1: #067302;
+$green2: #a9bf04;
+$green3: #acd704;
+$orange: #f25c05;
+$light: #fffad5;
+$cyan: #00afea;
+
+ul.inline {
+  list-style-type:none;
+  li {
+    display:inline-block;
+  }
+}
+
+#topbar {
+  background: #0c0b35; /* Old browsers */
+  background: -moz-linear-gradient(top, #0c0b35 0%, #000000 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0c0b35), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #0c0b35 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #0c0b35 0%,#000000 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #0c0b35 0%,#000000 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #0c0b35 0%,#000000 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0c0b35', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+  
+  ul.nav {
+    margin:0; 
+    padding:0;
+    li {
+      line-height:60px;
+      a {
+        color:#fff;
+        padding:0 .5em;
+      }
+    }
+  }
+}
+div.logo-holder {
+  padding:.5em;
+}
+#logo {
+  font-family: 'Oxygen', cursive;
+  font-weight:lighter;
+  color: #fff;
+  margin-top:.5em;
+  //  color:#ccc; 
+  strong {
+    font-weight:lighter; 
+  color:$green3; 
+
+  }
+}
+
