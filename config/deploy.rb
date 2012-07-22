@@ -1,5 +1,5 @@
 load 'deploy/assets'
-require 'capistrano/bundler'
+require "bundler/capistrano"
 
 set :application, "thomaswebsite"
 set :repository,  "git@bitbucket.org:tommyvyo/thomasvendetta.com.git"
