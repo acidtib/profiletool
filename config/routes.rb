@@ -1,4 +1,13 @@
 Thomasite::Application.routes.draw do
+  
+  match 'auth' => 'application#auth', :as => 'auth_get', :via => :get
+  match 'auth' => 'application#auth_post', :as => 'auth_post', :via => :post
+  match 'logout' => 'application#logout', :as => 'logout'
+  match 'twitter' => 'social#twitter', :as => 'social_twitter'
+  
+  namespace :admin do
+    root :to => 'admin#index'
+  end
 
   root :to => 'pages#index'
 
