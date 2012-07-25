@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  intensity: 1
+  length: MyString
+  comments: MyText
+
+two:
+  type: 
+  intensity: 1
+  length: MyString
+  comments: MyText

@@ -1,5 +1,7 @@
 Thomasite::Application.routes.draw do
   
+  resources :workouts
+
   resources :thoughts
 
   match 'auth' => 'application#auth', :as => 'auth_get', :via => :get
