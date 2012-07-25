@@ -22,5 +22,6 @@ production:
   adapter: mysql2
   host: localhost
   user: root
+  password: password 
   socket: /var/run/mysqld/mysqld.sock
 
