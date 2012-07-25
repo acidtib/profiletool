@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="twelve columns">
+    <h4>thoughts
+      <% if is_admin? %>
+        <small><%= link_to "new", new_thought_path %> </small>
+      <% end %>
+    </h4>
+    
+  </div>
+</div>
+<% @thoughts.each do |thought| %>
+
+  <div class="row">
+    <div class="ten columns centered">
+
+      <h6><%= thought.title %></h6>
+      <p><%= thought.body %></p>
+    </div>
+  </div>
+<% end %>
+
