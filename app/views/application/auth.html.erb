@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="four columns">
+    <%= form_for :authentication, :url => auth_post_path do |f| %>
+      <%= f.label :password %><br/>
+    <%= f.password_field :password %>
+    <%= f.submit %>
+  <% end %>
+  </div>
+</div>
