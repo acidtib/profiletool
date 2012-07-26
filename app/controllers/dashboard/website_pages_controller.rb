@@ -1,4 +1,4 @@
-class WebsitePagesController < ApplicationController
+class Dashboard::WebsitePagesController < ApplicationController
   
   before_filter :authenticate_user!
   before_filter :load_website
@@ -87,6 +87,8 @@ class WebsitePagesController < ApplicationController
 
   protected
   def load_website
-    @website = current_user.website
+    if current_user 
+      @website = current_user.website
+    end
   end
 end
