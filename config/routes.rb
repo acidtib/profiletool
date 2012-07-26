@@ -3,13 +3,18 @@ Thomasite::Application.routes.draw do
   resources :website_pages
 
   constraints (Sky::IsAppSite) do
+   
+    namespace :dashboard do
 
-    resource :user
-    resource :website
+      resource :user
+      resource :website
 
-    resources :website_pages, :path => "pages"
-    resources :workouts
-    resources :thoughts
+      resources :website_pages, :path => "pages"
+      resources :workouts
+      resources :thoughts
+
+      root :to => 'dashboard#index'
+    end
 
     match 'signup' => 'user#new', :as => 'new_user', :via => :get
     match 'signup' => 'user#create', :as => 'new_user', :via => :post
@@ -18,7 +23,7 @@ Thomasite::Application.routes.draw do
     match 'logout' => 'user_session#logout', :as => 'destroy_user_session'
     match 'twitter' => 'social#twitter', :as => 'social_twitter'
     
-    root :to => 'dashboard#index'
+    root :to => 'public#app_homepage'
 
   end
 

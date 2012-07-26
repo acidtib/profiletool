@@ -41,8 +41,16 @@ ActiveRecord::Schema.define(:version => 20120726215446) do
 
   add_index "website_pages", ["website_id"], :name => "index_website_pages_on_website_id"
 
-# Could not dump table "websites" because of following StandardError
-#   Unknown type 'reference' for column 'homepage_id'
+  create_table "websites", :force => true do |t|
+    t.string   "domain"
+    t.integer  "user_id"
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.boolean  "website_pages_enabled", :default => false
+    t.integer  "homepage_id"
+  end
+
+  add_index "websites", ["user_id"], :name => "index_websites_on_user_id"
 
   create_table "workouts", :force => true do |t|
     t.string   "workout_type"

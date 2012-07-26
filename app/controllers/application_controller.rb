@@ -1,13 +1,16 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-
-
-
+  
   def current_user
-    if session[:user_id]
-    @user = User.find(session[:user_id])
+    begin
+    if !session[:user_id].nil?
+      @user = User.find(session[:user_id])
     else
-      @user = nil
+      false
+    end
+    rescue Exception => e
+      reset_session 
+      false
     end
   end
 
@@ -29,10 +32,9 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user!
-    if session[:user_id]
-      return true
-    else
-      redirect_to new_user_session_path, :notice => "Not this time buster."
+    Rails.logger.info "Authenticating... #{session.to_s}"
+    if session[:user_id].nil?
+      redirect_to new_user_session_path, :notice => "Not this time."
     end
   end
 

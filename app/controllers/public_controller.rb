@@ -1,7 +1,11 @@
 class PublicController < ApplicationController
 
   layout "public"
-  
+
+  def app_homepage
+    render :template => 'public/app_homepage', :layout => "application"
+  end
+
   def path
     render :text => "<pre>#{JSON.pretty_generate(JSON.parse({ :params => params, :request => request.domain }.to_json))}</pre>" 
   end
