@@ -1,19 +1,32 @@
 Thomasite::Application.routes.draw do
-  
-  resources :workouts
 
-  resources :thoughts
+  constraints (Sky::IsAppSite) do
 
-  match 'auth' => 'application#auth', :as => 'auth_get', :via => :get
-  match 'auth' => 'application#auth_post', :as => 'auth_post', :via => :post
-  match 'logout' => 'application#logout', :as => 'logout'
-  match 'twitter' => 'social#twitter', :as => 'social_twitter'
-  
-  namespace :admin do
-    root :to => 'admin#index'
+        resources :websites
+    resources :workouts
+    resources :thoughts
+
+    match 'signup' => 'user#new', :as => 'new_user', :via => :get
+    match 'signup' => 'user#create', :as => 'new_user', :via => :post
+    match 'login'  => 'user_session#new', :as => 'new_user_session', :via => :get
+    match 'login'  => 'user_session#create', :as => 'new_user_session', :via => :post
+    match 'logout' => 'user_session#logout', :as => 'destroy_user_session'
+
+    match 'twitter' => 'social#twitter', :as => 'social_twitter'
+
+    match 'dashboard' => 'dashboard#index', :as => 'dashboard'
+
+    namespace 'dashboard' do 
+      resource  :user
+      resource :website
+    end
+    
+    root :to => 'dashboard/dashboard#index'
   end
 
-  root :to => 'pages#index'
+  match '*other' => 'public#path'
+
+  root :to => 'public#root'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="twelve columns">
+    <br/>
+    <div class="panel">
+      <h6>Need an account?</h6>
+      Click here to create a <%= link_to "new account!", new_user_path %>
+    </div>
+    <%= form_for :auth, :url => new_user_session_path do |f| %>
+      <div>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <%= f.submit %>
+  <% end %>
+  </div>
+</div>

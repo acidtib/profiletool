@@ -7,11 +7,10 @@
 <%= csrf_meta_tags %>
 </head>
 <body>
-
 <div id="topbar">
   <div class="row"> 
     <div class="six columns logo-holder">
-      <h1 id="logo" style="display:inline;">profile<strong>tool</strong></h1>
+      <h1 id="logo" style="display:inline;"><%= @user.first_name %><strong><%= @user.last_name %></strong></h1>
     </div>
     <div class="six columns">
       <ul class="inline nav">
