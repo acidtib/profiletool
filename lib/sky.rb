@@ -9,7 +9,7 @@ module Sky
 5.times {          Rails.logger.info "Subdomain was dashboard!"  }
           true
         else
-          5.times { Rails.logger.info "Subdomain was #{request.subdomain}" }
+          5.times { Rails.logger.info "Subdomain was #{request.subdomain} | Domain was #{request.domain}" }
           false
         end
       end
