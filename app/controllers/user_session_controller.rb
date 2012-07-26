@@ -7,7 +7,7 @@ class UserSessionController < ApplicationController
   def create
     user = authenticate_user(params[:auth][:email], params[:auth][:password])
     if user
-      redirect_to dashboard_path, :notice => "Hello!"
+      redirect_to dashboard_root_path, :notice => "Hello!"
     else
       redirect_to new_user_session_path, :notice => "Try again."
     end
