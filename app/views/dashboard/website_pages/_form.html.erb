@@ -1,4 +1,4 @@
-<%= form_for(@website_page) do |f| %>
+<%= form_for([:dashboard, @website_page]) do |f| %>
   <% if @website_page.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@website_page.errors.count, "error") %> prohibited this website_page from being saved:</h2>
