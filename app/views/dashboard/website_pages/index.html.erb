@@ -15,9 +15,9 @@
         <tr>
         <td><%= website_page.title %></td>
         <td><%= website_page.path %></td>
-        <td><%= link_to 'Show', website_page %></td>
-        <td><%= link_to 'Edit', edit_website_page_path(website_page) %></td>
-        <td><%= link_to 'Destroy', website_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [:dashboard, website_page] %></td>
+        <td><%= link_to 'Edit', edit_dashboard_website_page_path(website_page) %></td>
+        <td><%= link_to 'Destroy', [:dashboard, website_page], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
     </table>
