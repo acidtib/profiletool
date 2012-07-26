@@ -48,7 +48,7 @@ class Dashboard::WebsitePagesController < ApplicationController
 
     respond_to do |format|
       if @website_page.save
-        format.html { redirect_to @website_page, notice: 'Website page was successfully created.' }
+        format.html { redirect_to [:dashboard, @website_page], notice: 'Website page was successfully created.' }
         format.json { render json: @website_page, status: :created, location: @website_page }
       else
         format.html { render action: "new" }
@@ -64,7 +64,7 @@ class Dashboard::WebsitePagesController < ApplicationController
 
     respond_to do |format|
       if @website_page.update_attributes(params[:website_page])
-        format.html { redirect_to @website_page, notice: 'Website page was successfully updated.' }
+        format.html { redirect_to [:dashboard, @website_page], notice: 'Website page was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -80,7 +80,7 @@ class Dashboard::WebsitePagesController < ApplicationController
     @website_page.destroy
 
     respond_to do |format|
-      format.html { redirect_to website_pages_url }
+      format.html { redirect_to dashboard_website_pages_url }
       format.json { head :no_content }
     end
   end
