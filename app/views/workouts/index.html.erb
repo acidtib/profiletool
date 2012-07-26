@@ -10,10 +10,16 @@
   <div class="twelve columns">
     <% @workouts.each do |workout| %>
       <div class="workout">
-        <h5><%= workout.type %></h5>
-        <p><strong>Intensity: <%= workout.intensity %> - <strong>Count/Length:</strong> <%= workout.length %> <br/>
-          <%= workout.comments %> </p>
+        <h5><%= workout.workout_type %> <small><%= workout.workout_time.strftime("%B %d, %Y - %l:%S%P") %></small></h5>
+        <p> <strong>Count/Length:</strong> <%= workout.length_or_count %> <strong>Intensity Rating: </strong><%= workout.intensity %><br/>
+         <strong>Comments</strong> <% if workout.comments %>
+           <%= workout.comments %>
+          <% else %>
+            none
+          <% end %>
+        </p> 
       </div>
+      <hr>
     <% end %>
   </div>
 </div>
