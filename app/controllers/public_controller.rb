@@ -3,7 +3,11 @@ class PublicController < ApplicationController
   layout "public"
 
   def app_homepage
-    render :template => 'public/app_homepage', :layout => "application"
+    if current_user
+      redirect_to dashboard_root_path
+    else
+      render :template => 'public/app_homepage', :layout => "application"
+    end
   end
 
   def path
