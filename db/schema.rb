@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120725233506) do
+ActiveRecord::Schema.define(:version => 20120726215446) do
 
   create_table "thoughts", :force => true do |t|
     t.string   "title"
@@ -29,14 +29,20 @@ ActiveRecord::Schema.define(:version => 20120725233506) do
     t.string   "last_name"
   end
 
-  create_table "websites", :force => true do |t|
-    t.string   "domain"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "website_pages", :force => true do |t|
+    t.string   "title"
+    t.text     "body_markdown"
+    t.text     "body_html"
+    t.integer  "website_id"
+    t.string   "path"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
-  add_index "websites", ["user_id"], :name => "index_websites_on_user_id"
+  add_index "website_pages", ["website_id"], :name => "index_website_pages_on_website_id"
+
+# Could not dump table "websites" because of following StandardError
+#   Unknown type 'reference' for column 'homepage_id'
 
   create_table "workouts", :force => true do |t|
     t.string   "workout_type"
@@ -46,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20120725233506) do
     t.text     "comments"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "user_id"
   end
 
 end

@@ -1,9 +1,13 @@
 Thomasite::Application.routes.draw do
 
+  resources :website_pages
+
   constraints (Sky::IsAppSite) do
 
-    resource  :user
+    resource :user
     resource :website
+
+    resources :website_pages, :path => "pages"
     resources :workouts
     resources :thoughts
 

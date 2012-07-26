@@ -3,12 +3,14 @@
     <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Domain:</b>
+<h3>Domain</h3>
   <%= @website.domain %>
 </p>
+<h3>Modules</h3>
+<strong>webpage module</strong> <% if @website.website_pages_enabled? %> enabled <% else %> disabled <% end %>
 
-
-
+<br/>
+<br/>
 <%= link_to 'Edit', edit_website_path %> |
 <%= link_to 'Back', root_path %>
 </div>
