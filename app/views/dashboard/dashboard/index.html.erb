@@ -10,7 +10,7 @@
   <% if @pages %>
     <div class="four columns">
       <div class="panel">
-        <h3>your pages<small><%= link_to "add", new_dashboard_website_page_path %></h3>
+        <h3>your pages<small><%= link_to "add", new_dashboard_website_page_path %></small></h3>
         <% @pages.each do |page| %>
           <%= link_to page.title, dashboard_website_page_path(page) %><br/>
         <% end %>

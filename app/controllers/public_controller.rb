@@ -19,7 +19,7 @@ class PublicController < ApplicationController
       if @website.homepage.nil?
         render 'public/no_page_set'
       else
-        render :inline => @website.homepage.body_markdown, :layout => "public"
+        render :inline => @website.homepage.body_markdown, :layout => "public_basic"
       end
     end
   end
