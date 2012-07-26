@@ -27,6 +27,7 @@ role :db,  "thomasvendetta.com", :primary => true # This is where Rails migratio
 
 set :use_sudo, false
 
+after "deploy", "deploy:migrate"
 
 namespace :deploy do
   task :start, :roles => :app, :except => { :no_release => true } do 
