@@ -11,7 +11,19 @@ class PublicController < ApplicationController
   end
 
   def path
-    render :text => "<pre>#{JSON.pretty_generate(JSON.parse({ :params => params, :request => request.domain }.to_json))}</pre>" 
+    @website = Website.find_by_domain(request.domain)
+    if @website.nil?
+      render :text => "404"
+    else
+      @user = @website.user
+      @page = @website.website_pages.find_by_path(params[:other])
+      if @page.nil?
+        render :text => "404 page not found, get outta here homie.", :status => 404
+      else
+        @html = @page.body_html
+        render 'public/page_template'
+      end
+    end
   end
 
   def root 
@@ -20,9 +32,9 @@ class PublicController < ApplicationController
       render :text => "404"
     else
       @user = @website.user
-      homepage = @website.get_homepage
-      if homepage
-        @html = homepage.body_html
+      @page = @website.get_homepage
+      if @page
+        @html = @page.body_html
         render 'public/page_template'
       else
         render 'public/no_page_set'

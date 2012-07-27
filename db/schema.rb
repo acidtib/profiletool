@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120726235920) do
+ActiveRecord::Schema.define(:version => 20120727010633) do
 
   create_table "thoughts", :force => true do |t|
     t.string   "title"
@@ -35,8 +35,9 @@ ActiveRecord::Schema.define(:version => 20120726235920) do
     t.text     "body_html"
     t.integer  "website_id"
     t.string   "path"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.boolean  "published",     :default => true
   end
 
   add_index "website_pages", ["path"], :name => "index_website_pages_on_path"
@@ -45,10 +46,11 @@ ActiveRecord::Schema.define(:version => 20120726235920) do
   create_table "websites", :force => true do |t|
     t.string   "domain"
     t.integer  "user_id"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
+    t.datetime "created_at",                                            :null => false
+    t.datetime "updated_at",                                            :null => false
     t.boolean  "website_pages_enabled", :default => false
     t.integer  "homepage_id"
+    t.string   "title",                 :default => "My Great Website"
   end
 
   add_index "websites", ["user_id"], :name => "index_websites_on_user_id"

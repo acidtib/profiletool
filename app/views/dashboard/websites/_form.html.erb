@@ -16,8 +16,16 @@
     <%= f.text_field :domain %>
   </div>
   <div class="field">
-    <%= f.label :website_pages_enabled %><br/>
-    <%= f.check_box :website_pages_enabled %>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <table>
+      <tr>
+        <td><%= f.label :website_pages_enabled %></td>
+        <td><%= f.check_box :website_pages_enabled %></td>
+      </tr>
+    </table>
   </div>
   <div class="actions">
     <%= f.submit %>
