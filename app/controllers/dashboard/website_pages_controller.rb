@@ -45,7 +45,7 @@ class Dashboard::WebsitePagesController < ApplicationController
   # POST /website_pages.json
   def create
     @website_page = @website.website_pages.new(params[:website_page])
-
+    
     respond_to do |format|
       if @website_page.save
         format.html { redirect_to [:dashboard, @website_page], notice: 'Website page was successfully created.' }

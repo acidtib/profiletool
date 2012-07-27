@@ -20,11 +20,13 @@ class PublicController < ApplicationController
       render :text => "404"
     else
       @user = @website.user
-      if @website.homepage.nil?
-        render 'public/no_page_set'
+      homepage = @website.get_homepage
+      if homepage
+        render :inline => homepage.body_markdown, :layout => "public_basic"
       else
-        render :inline => @website.homepage.body_markdown, :layout => "public_basic"
+        render 'public/no_page_set'
       end
+
     end
   end
 
