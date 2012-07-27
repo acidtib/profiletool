@@ -3,3 +3,14 @@ div.markdown-editor {
     float:right;
   }
 }
+div.ipc {
+  padding:.5em;
+  border: 1px dashed #ccc;
+  .best_in_place {
+    form {
+      input {
+      margin-top:5px;
+    }
+  }
+  }
+}

@@ -4,8 +4,8 @@
 
     <%= render 'form' %>
 
-    <%= link_to 'Show', @website_page %> |
-    <%= link_to 'Back', website_pages_path %>
+    <%= link_to 'Show', [:dashboard, @website_page] %> |
+    <%= link_to 'Back', dashboard_website_pages_path %>
 
   </div>
 </div>

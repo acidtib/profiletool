@@ -1,21 +1,25 @@
 <div class="row">
   <div class="twelve columns"> 
+
     <p id="notice"><%= notice %></p>
-
-    <p>
-    <b>Title:</b>
-    <%= @website_page.title %>
-    </p>
-
-    <p>
+    <div class="row">
+      <div class="six columns">
+        <div class="ipc">
+          <strong>Title: </strong> <%= best_in_place [:dashboard, @website_page], :title, :type => :input %> 
+      </div>
+      </div>
+      <div class="six columns">
+        <div class="ipc">
+          <strong>Path: </strong> <%= best_in_place [:dashboard, @website_page], :path, :type => :input %>
+      </div>
+      </div>
+    </div>
+    <br>
+    <br>
     <b>Body markdown:</b>
-    <%= @website_page.body_markdown %>
+    <%= raw @website_page.body_html %>
     </p>
 
-    <p>
-    <b>Path:</b>
-    <%= @website_page.path %>
-    </p>
 
 
     <%= link_to 'Edit', edit_dashboard_website_page_path(@website_page) %> |

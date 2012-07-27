@@ -2,9 +2,9 @@ class Dashboard::WebsitePagesController < ApplicationController
   
   before_filter :authenticate_user!
   before_filter :load_website
-
   # GET /website_pages
   # GET /website_pages.json
+
   def index
     @website_pages = @website.website_pages.all
 

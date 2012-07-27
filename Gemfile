@@ -4,6 +4,7 @@ gem 'rails', '3.2.6'
 gem 'httparty'
 gem 'bcrypt-ruby'
 gem 'rdiscount'
+gem 'best_in_place'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
