@@ -9,7 +9,6 @@
         <th>Status</th> 
         <th></th>
         <th></th>
-        <th></th>
       </tr>
 
       <% @website_pages.each do |website_page| %>
@@ -23,7 +22,6 @@
             unpublished 
           <% end %>
         </td>
-        <td><%= link_to 'Show', [:dashboard, website_page] %></td>
         <td><%= link_to 'Edit', edit_dashboard_website_page_path(website_page) %></td>
         <td><%= link_to 'Destroy', [:dashboard, website_page], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
