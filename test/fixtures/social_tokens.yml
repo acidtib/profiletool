@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  website: 
+  preferences: MyText
+
+two:
+  type: 
+  website: 
+  preferences: MyText

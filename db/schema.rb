@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120727010633) do
+ActiveRecord::Schema.define(:version => 20120727204003) do
+
+  create_table "social_tokens", :force => true do |t|
+    t.string   "type"
+    t.integer  "website_id"
+    t.text     "preferences"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "social_tokens", ["website_id"], :name => "index_social_tokens_on_website_id"
 
   create_table "thoughts", :force => true do |t|
     t.string   "title"
