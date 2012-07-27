@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title><%= @page.title %> <%= @website.title %></title>
+<title><% if @page %><%= @page.title %> <% end %><% if @website %>  <%= @website.title %> <% else %> - woo hoo!<% end %></title>
+
 <%= stylesheet_link_tag    "application", :media => "all" %>
 <%= javascript_include_tag "application" %>
 <%= csrf_meta_tags %>
