@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120726215446) do
+ActiveRecord::Schema.define(:version => 20120726235920) do
 
   create_table "thoughts", :force => true do |t|
     t.string   "title"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20120726215446) do
     t.datetime "updated_at",    :null => false
   end
 
+  add_index "website_pages", ["path"], :name => "index_website_pages_on_path"
   add_index "website_pages", ["website_id"], :name => "index_website_pages_on_website_id"
 
   create_table "websites", :force => true do |t|

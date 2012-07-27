@@ -22,11 +22,11 @@ class PublicController < ApplicationController
       @user = @website.user
       homepage = @website.get_homepage
       if homepage
-        render :inline => homepage.body_markdown, :layout => "public_basic"
+        @html = homepage.body_html
+        render 'public/page_template'
       else
         render 'public/no_page_set'
       end
-
     end
   end
 
