@@ -11,4 +11,4 @@ stderr_path "/var/www/rails/thomaswebsite/current/log/unicorn.stderr.log"
 stdout_path "/var/www/rails/thomaswebsite/current/log/unicorn.stdout.log"
 
 
-user 'thomas'
+user 'app'
