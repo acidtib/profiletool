@@ -7,7 +7,7 @@ set :branch, :master
 set :deploy_to, '/var/www/rails/thomaswebsite'
 set :deploy_via, :remote_cache
 set :scm, :git
-set :user, "thomas"
+set :user, "app"
 
 set :default_environment, {
   'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
