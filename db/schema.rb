@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120727204003) do
+ActiveRecord::Schema.define(:version => 20120731015641) do
+
+  create_table "comments", :force => true do |t|
+    t.integer  "post_id"
+    t.text     "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "dashboard_blog_posts", :force => true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "social_tokens", :force => true do |t|
     t.string   "type"

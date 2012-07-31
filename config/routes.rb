@@ -1,9 +1,21 @@
 Thomasite::Application.routes.draw do
 
+  get "comments/create"
+
+  get "comments/destroy"
+
+  namespace :dashboard do  
+    namespace :blog do 
+      resources :posts do 
+        resources :comments 
+      end 
+    end 
+  end
+
   resources :website_pages
 
   constraints (Sky::IsAppSite) do
-   
+
     namespace :dashboard do
 
       resource :user
@@ -22,7 +34,7 @@ Thomasite::Application.routes.draw do
     match 'login'  => 'user_session#create', :as => 'new_user_session', :via => :post
     match 'logout' => 'user_session#logout', :as => 'destroy_user_session'
     match 'twitter' => 'social#twitter', :as => 'social_twitter'
-    
+
     root :to => 'public#app_homepage'
 
   end
