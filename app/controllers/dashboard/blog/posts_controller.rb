@@ -1,54 +1,57 @@
 class Dashboard::Blog::PostsController < ApplicationController
+
+  before_filter :authenticate_user!
+
   # GET /dashboard/blog/posts
   # GET /dashboard/blog/posts.json
   def index
-    @dashboard_blog_posts = Post.all
+    @posts = Post.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @dashboard_blog_posts }
+      format.json { render json: @posts }
     end
   end
 
   # GET /dashboard/blog/posts/1
   # GET /dashboard/blog/posts/1.json
   def show
-    @dashboard_blog_post = Post.find(params[:id])
+    @post = Post.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @dashboard_blog_post }
+      format.json { render json: @post }
     end
   end
 
   # GET /dashboard/blog/posts/new
   # GET /dashboard/blog/posts/new.json
   def new
-    @dashboard_blog_post = Post.new
+    @post = Post.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @dashboard_blog_post }
+      format.json { render json: @post }
     end
   end
 
   # GET /dashboard/blog/posts/1/edit
   def edit
-    @dashboard_blog_post = Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   # POST /dashboard/blog/posts
   # POST /dashboard/blog/posts.json
   def create
-    @dashboard_blog_post = Post.new(params[:dashboard_blog_post])
+    @post = Post.new(params[:post])
 
     respond_to do |format|
-      if @dashboard_blog_post.save
-        format.html { redirect_to @dashboard_blog_post, notice: 'Post was successfully created.' }
-        format.json { render json: @dashboard_blog_post, status: :created, location: @dashboard_blog_post }
+      if @post.save
+        format.html { redirect_to [:dashboard, :blog, @post], notice: 'Post was successfully created.' }
+        format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
-        format.json { render json: @dashboard_blog_post.errors, status: :unprocessable_entity }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,15 +59,15 @@ class Dashboard::Blog::PostsController < ApplicationController
   # PUT /dashboard/blog/posts/1
   # PUT /dashboard/blog/posts/1.json
   def update
-    @dashboard_blog_post = Post.find(params[:id])
+    @post = Post.find(params[:id])
 
     respond_to do |format|
-      if @dashboard_blog_post.update_attributes(params[:dashboard_blog_post])
-        format.html { redirect_to @dashboard_blog_post, notice: 'Post was successfully updated.' }
+      if @post.update_attributes(params[:post])
+        format.html { redirect_to [:dashboard, :blog, @post], notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @dashboard_blog_post.errors, status: :unprocessable_entity }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -72,11 +75,11 @@ class Dashboard::Blog::PostsController < ApplicationController
   # DELETE /dashboard/blog/posts/1
   # DELETE /dashboard/blog/posts/1.json
   def destroy
-    @dashboard_blog_post = Post.find(params[:id])
-    @dashboard_blog_post.destroy
+    @post = Post.find(params[:id])
+    @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to dashboard_blog_posts_url }
+      format.html { redirect_to dashboard_blog_posts_path }
       format.json { head :no_content }
     end
   end

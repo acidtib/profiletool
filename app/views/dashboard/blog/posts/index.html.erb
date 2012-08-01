@@ -1,7 +1,7 @@
 <h1>Welcome to the Blog</h1>
 
-<% @dashboard_blog_posts.reverse.each do |post| %>
-  <h2><%= link_to post.title, post %></h2>
+<% @posts.reverse.each do |post| %>
+  <h2><%= link_to post.title, ([:dashboard, :blog, post]) %></h2>
   <p><%= time_ago_in_words post.created_at %> ago</p>
 <p><%= truncate post.text%></p>
 <% end %>
