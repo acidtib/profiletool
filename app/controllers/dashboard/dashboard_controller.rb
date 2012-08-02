@@ -10,6 +10,9 @@ class Dashboard::DashboardController < ApplicationController
       if @website.website_pages_enabled?
         @pages = @website.website_pages.all
       end
+      if @website.website_blog_enabled?
+        @posts = @website.posts.all
+      end
     end
   end
 
