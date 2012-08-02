@@ -1,15 +1,16 @@
-<%= form_for([:dashboard, :blog, @dashboard_blog_post]) do |f| %>
-  <% if @dashboard_blog_post.errors.any? %>
+<div class="row twelve columns">
+  <%= form_for([:dashboard, :blog, @post]) do |f| %>
+    <% if @post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@dashboard_blog_post.errors.count, "error") %> prohibited this dashboard_blog_post from being saved:</h2>
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% @dashboard_blog_post.errors.full_messages.each do |msg| %>
+    <ul>
+      <% @post.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
   <div class="field">
     <%= f.label :title %><br />
@@ -23,3 +24,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>

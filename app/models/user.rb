@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
    has_secure_password
 
    has_one :website
+   has_many :posts
 
 end
