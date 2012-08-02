@@ -12,7 +12,6 @@ Thomasite::Application.routes.draw do
     end 
   end
 
-  resources :website_pages
 
   constraints (Sky::IsAppSite) do
 
