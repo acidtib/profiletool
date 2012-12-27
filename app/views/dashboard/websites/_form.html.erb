@@ -4,33 +4,53 @@
       <h2><%= pluralize(@website.errors.count, "error") %> prohibited this website from being saved:</h2>
 
       <ul>
-      <% @website.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @website.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
+  <fieldset>
+    <legend>Domain Settings</legend>
+
     <%= f.label :domain %><br />
     <%= f.text_field :domain %>
-  </div>
-  <div class="field">
     <%= f.label :title %><br/>
     <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <table>
-      <tr>
-        <td><%= f.label :website_pages_enabled %></td>
-        <td><%= f.check_box :website_pages_enabled %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :website_blog_enabled %></td>
-        <td><%= f.check_box :website_blog_enabled %></td>
-      </tr>
-    </table>
-  </div>
+
+  </fieldset>
+
+  <fieldset>
+    <legend>Custom CSS</legend>
+
+    <%= f.text_area :custom_css %>
+
+  </fieldset>
+
+  <fieldset>
+    <legend>Tools</legend>
+
+    <div class="field">
+      <table>
+        <tr>
+          <td><%= f.label :website_pages_enabled %></td>
+          <td><%= f.check_box :website_pages_enabled %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :website_blog_enabled %></td>
+          <td><%= f.check_box :website_blog_enabled %></td>
+        </tr>
+      </table>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Third Party Plugins</legend>
+
+
+  </fieldset>
+
   <div class="actions">
     <%= f.submit %>
   </div>

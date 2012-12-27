@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title><% if @page %><%= @page.title %> <% end %><% if @website %>  <%= @website.title %> <% else %> - woo hoo!<% end %></title>
+  <head>
+    <title><% if @page %><%= @page.title %> <% end %><% if @website %>  <%= @website.title %> <% else %> - woo hoo!<% end %></title>
 
-<%= stylesheet_link_tag    "application", :media => "all" %>
-<%= javascript_include_tag "application" %>
-<%= csrf_meta_tags %>
- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <script type="text/javascript">
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-     var _gaq = _gaq || [];
-       _gaq.push(['_setAccount', 'UA-23744589-1']);
-         _gaq.push(['_setDomainName', 'thomasvendetta.com']);
-           _gaq.push(['_trackPageview']);
+    <style type="text/css" rel="stylesheet">
+      <%= @website.custom_css %>
+    </style>
 
-             (function() {
-                   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                             })();
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23744589-1']);
+      _gaq.push(['_setDomainName', 'thomasvendetta.com']);
+      _gaq.push(['_trackPageview']);
 
-                           </script>
+      (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+
+</script>
 </head>
 <body>
-<div id="topbar">
-  <div class="row"> 
-    <div class="six columns logo-holder">
-      <h1 id="logo" style="display:inline;"><%= @user.first_name %><strong><%= @user.last_name %></strong></h1>
-    </div>
-    <div class="six columns">
-      <ul class="inline nav">
-      </ul>
-    </div>
-  </div>
-</div>
-
-<% if notice %>
-  <div class="row">
-  <div class="twelve columns">
-    <br>
-    <div class="alert-box secondary">
-      <%= notice %> 
-      <a href="" class="close">&times;</a>
+  <div id="topbar">
+    <div class="row"> 
+      <div class="six columns logo-holder">
+        <h1 id="logo" style="display:inline;"><%= @user.first_name %><strong><%= @user.last_name %></strong></h1>
+      </div>
+      <div class="six columns">
+        <ul class="inline nav">
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-<% end %>
 
-<%= yield %>
+  <% if notice %>
+    <div class="row">
+      <div class="twelve columns">
+        <br>
+        <div class="alert-box secondary">
+          <%= notice %> 
+          <a href="" class="close">&times;</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= yield %>
 
 </body>
 </html>

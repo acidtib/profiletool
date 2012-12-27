@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: thoughts
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  body       :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'test_helper'
 
 class ThoughtTest < ActiveSupport::TestCase
