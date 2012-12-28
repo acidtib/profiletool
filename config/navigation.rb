@@ -3,6 +3,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.dom_class = "left" 
     primary.item :divider, '', nil, :class => "divider"
     primary.item :dropdown, 'My Site', dashboard_root_path, :class => "has-dropdown" do |sub_nav|
+      sub_nav.dom_class = "dropdown"
       sub_nav.item :website_settings, 'Settings', dashboard_website_path 
       sub_nav.item :lol, 'wtf', '#'
     end
