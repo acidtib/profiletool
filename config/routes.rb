@@ -4,13 +4,12 @@ Thomasite::Application.routes.draw do
 
   get "comments/destroy"
 
-  namespace :dashboard do  
-    namespace :blog do 
-      resources :posts do 
-        resources :comments 
-      end 
+  #resources :website_pages, :path => "pages"
+  namespace :blog do 
+    resources :posts do 
+      resources :comments 
     end 
-  end
+  end 
 
 
   constraints (Sky::IsAppSite) do
