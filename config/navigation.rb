@@ -5,6 +5,8 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :dropdown, 'My Site', dashboard_root_path, :class => "has-dropdown" do |sub_nav|
       sub_nav.dom_class = "dropdown"
       sub_nav.item :website_settings, 'Settings', dashboard_website_path 
+      sub_nav.item :workouts, 'Workouts', dashboard_workouts_path
+      sub_nav.item :thoughts, 'Thoughts', dashboard_thoughts_path
       sub_nav.item :lol, 'wtf', '#'
     end
   end
