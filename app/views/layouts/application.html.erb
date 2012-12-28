@@ -19,103 +19,101 @@
        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
        })();
 
-</script>
-</head>
-<body>
+     </script>
+   </head>
+   <body>
 
-  
-<div class="row">
-  <div class="twelve columns">
-    <nav class="top-bar">
-      <ul>
-        <!-- Title Area -->
-        <li class="name">
-          <h1>
-            <a href="#">
-              profile tool, bitches 
-            </a>
-          </h1>
-        </li>
-        <li class="toggle-topbar"><a href="#"></a></li>
-      </ul>
 
-      <section>
-        <!-- Left Nav Section -->
-        <ul class="left">
-          <li class="divider"></li>
-          <li class="has-dropdown">
-            <a class="active" href="#">Item 1</a>
-            <ul class="dropdown">
-              <li><label>Section Name</label></li>
-              <li class="has-dropdown">
-                <a href="#" class="">Level 1, Has Dropdown</a>
-                <ul class="dropdown">
-                  <li><a href="#">Level 2</a></li>
-                  <li><a href="#">Level 2</a></li>
-                  <li class="has-dropdown"><a href="#">Level 2, Has Dropdown</a>
-                    <ul class="dropdown">
-                      <li><label>Section</label></li>
-                      <li><a href="#">Level 3</a></li>
-                      <li><a href="#">Level 3</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#">Level 3</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Level 2</a></li>
-                  <li><a href="#">Level 2</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Level 1</a></li>
-              <li><a href="#">Level 1</a></li>
-              <li class="divider"></li>
-              <li><label>Section Name</label></li>
-              <li><a href="#">Level 1</a></li>
-              <li><a href="#">Level 1</a></li>
-              <li><a href="#">Level 1</a></li>
-              <li class="divider"></li>
-              <li><a href="#">See all &rarr;</a></li>
-            </ul>
-          </li>
-          <li class="divider hide-for-small"></li>
-        </ul>
+     <nav class="top-bar">
+     <ul>
+       <!-- Title Area -->
+       <li class="name">
+       <h1>
+         <a href="#">
+           profile tool, bitches 
+         </a>
+       </h1>
+       </li>
+       <li class="toggle-topbar"><a href="#"></a></li>
+     </ul>
 
-        <!-- Right Nav Section -->
-        <ul class="right">
-          <li class="divider show-for-medium-and-up"></li>
-          <li class="has-dropdown">
-            <a href="#">Item 2</a>
-            <ul class="dropdown">
-              <li><label>Section Name</label></li>
-              <li><a href="#" class="">Level 1</a></li>
-              <li><a href="#">Dropdown Option</a></li>
-              <li><a href="#">Dropdown Option</a></li>
-              <li class="divider"></li>
-              <li><label>Section Name</label></li>
-              <li><a href="#">Dropdown Option</a></li>
-              <li><a href="#">Dropdown Option</a></li>
-              <li><a href="#">Dropdown Option</a></li>
-              <li class="divider"></li>
-              <li><a href="#">See all &rarr;</a></li>
-            </ul>
-          </li>
-        </ul>
-      </section>
-    </nav>
-  </div>
-</div>
-  <% if notice %>
-    <div class="row">
-      <div class="twelve columns">
-        <br>
-        <div class="alert-box secondary">
-          <%= notice %> 
-          <a href="" class="close">&times;</a>
-        </div>
-      </div>
-    </div>
-  <% end %>
+     <section>
+     <!-- Left Nav Section -->
+      <%= render_navigation %>
+<!--     <ul class="left">
+       <li class="divider"></li>
+       <li class="has-dropdown">
+       <a class="active" href="#">Item 1</a>
+       <ul class="dropdown">
+         <li><label>Section Name</label></li>
+         <li class="has-dropdown">
+         <a href="#" class="">Level 1, Has Dropdown</a>
+         <ul class="dropdown">
+           <li><a href="#">Level 2</a></li>
+           <li><a href="#">Level 2</a></li>
+           <li class="has-dropdown"><a href="#">Level 2, Has Dropdown</a>
+           <ul class="dropdown">
+             <li><label>Section</label></li>
+             <li><a href="#">Level 3</a></li>
+             <li><a href="#">Level 3</a></li>
+             <li class="divider"></li>
+             <li><a href="#">Level 3</a></li>
+           </ul>
+           </li>
+           <li><a href="#">Level 2</a></li>
+           <li><a href="#">Level 2</a></li>
+         </ul>
+         </li>
+         <li><a href="#">Level 1</a></li>
+         <li><a href="#">Level 1</a></li>
+         <li class="divider"></li>
+         <li><label>Section Name</label></li>
+         <li><a href="#">Level 1</a></li>
+         <li><a href="#">Level 1</a></li>
+         <li><a href="#">Level 1</a></li>
+         <li class="divider"></li>
+         <li><a href="#">See all &rarr;</a></li>
+       </ul>
+       </li>
+       <li class="divider hide-for-small"></li>
+     </ul>
 
-  <%= yield %>
+     <!-- Right Nav Section -->
+     <ul class="right">
+       <li class="divider show-for-medium-and-up"></li>
+       <li class="has-dropdown">
+       <a href="#">Item 2</a>
+       <ul class="dropdown">
+         <li><label>Section Name</label></li>
+         <li><a href="#" class="">Level 1</a></li>
+         <li><a href="#">Dropdown Option</a></li>
+         <li><a href="#">Dropdown Option</a></li>
+         <li class="divider"></li>
+         <li><label>Section Name</label></li>
+         <li><a href="#">Dropdown Option</a></li>
+         <li><a href="#">Dropdown Option</a></li>
+         <li><a href="#">Dropdown Option</a></li>
+         <li class="divider"></li>
+         <li><a href="#">See all &rarr;</a></li>
+       </ul>
+       </li>
+     </ul>-->
+     </section>
+     </nav>
 
-</body>
-</html>
+     <% if notice %>
+       <div class="row">
+         <div class="twelve columns">
+           <br>
+           <div class="alert-box secondary">
+             <%= notice %> 
+             <a href="" class="close">&times;</a>
+           </div>
+         </div>
+       </div>
+     <% end %>
+
+     <%= yield %>
+
+   </body>
+ </html>

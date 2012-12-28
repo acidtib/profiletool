@@ -6,7 +6,7 @@ gem 'bcrypt-ruby'
 gem 'rdiscount'
 gem 'best_in_place'
 gem 'annotate'
-gem 'simple_navigation'
+gem 'simple-navigation'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
