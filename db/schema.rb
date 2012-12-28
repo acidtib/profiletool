@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120802025541) do
+ActiveRecord::Schema.define(:version => 20121227235315) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20120802025541) do
     t.integer  "homepage_id"
     t.string   "title",                 :default => "My Great Website"
     t.boolean  "website_blog_enabled"
+    t.text     "custom_css"
   end
 
   add_index "websites", ["user_id"], :name => "index_websites_on_user_id"

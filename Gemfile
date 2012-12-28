@@ -5,6 +5,9 @@ gem 'httparty'
 gem 'bcrypt-ruby'
 gem 'rdiscount'
 gem 'best_in_place'
+gem 'annotate'
+gem 'simple-navigation'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -23,7 +26,6 @@ group :assets do
 
   # Add these gems
   gem 'compass-rails', '~> 1.0.3'
-  gem 'zurb-foundation', '~> 3.0.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby

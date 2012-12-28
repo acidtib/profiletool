@@ -2,14 +2,12 @@ module Sky
 
   class IsAppSite
     def self.matches?(request)
-      if (request.host == "personalsite.dev")
+      if (request.host == "profilesite.dev")
         true
       else
         if request.subdomain == "dashboard"
-5.times {          Rails.logger.info "Subdomain was dashboard!"  }
           true
         else
-          5.times { Rails.logger.info "Subdomain was #{request.subdomain} | Domain was #{request.domain}" }
           false
         end
       end
