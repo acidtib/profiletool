@@ -2,7 +2,7 @@ module Sky
 
   class IsAppSite
     def self.matches?(request)
-      if (request.host == "profilesite.dev")
+      if (request.host == "profiletool.dev")
         true
       else
         if request.subdomain == "dashboard"

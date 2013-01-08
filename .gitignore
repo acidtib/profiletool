@@ -14,3 +14,4 @@
 /log/*.log
 /tmp
 .powder
+config/initializers/secret_token.rb
