@@ -14,4 +14,13 @@
 /log/*.log
 /tmp
 .powder
-config/initializers/secret_token.rb
+/config/initializers/secret_token.rb
+rholog-*
+sim-*
+bin/libs
+bin/RhoBundle
+bin/tmp
+bin/target
+bin/*.ap_
+*.o
+*.jar
